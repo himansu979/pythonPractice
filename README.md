@@ -16,6 +16,11 @@ import pandas as pd
 from ggplot import *
 ```
 
-#### *2. collection*
+#### *2. plotting*
+```python    
+import numpy as np
+import pandas as pd
+from ggplot import *
+```
 #### *3. add here*
 
