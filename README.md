@@ -18,9 +18,9 @@ from ggplot import *
 
 #### *2. plotting*
 ```python    
-import numpy as np
-import pandas as pd
-from ggplot import *
+ggplot(Auto, aes(x="cylinders", y="mpg")) + geom_point()
 ```
+This will output the following scatter plot:
+![plot](images/scatter-plot.png)
 #### *3. add here*
 
