@@ -7,6 +7,8 @@ Link to the lab tutorial [click here](http://www.science.smith.edu/~jcrouser/SDS
 
 * Practice Python programing and Machine Learning
 * Writing codes, visualization for python learning.
-* added new items
-* 4th item
+
+#### *1. Item 1*
+#### *2. collection*
+#### *3. add here*
 
