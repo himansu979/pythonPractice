@@ -1,4 +1,4 @@
-# Practice Python Program
+# Python Machine Learning
 
 ## Link
 Link to the lab tutorial [click here](http://www.science.smith.edu/~jcrouser/SDS293/labs/python-intro.html)
