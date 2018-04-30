@@ -24,7 +24,12 @@ from ggplot import *
 ggplot(Auto, aes(x="cylinders", y="mpg")) + geom_point()
 ```
 This will output the following scatter plot:
-![plot](images/scatter-plot.png)
+
+<!-- ![plot](images/scatter-plot.png) -->
+
+<p align="center">
+  <img src="images/scatter-plot.png" width=400 height=400>
+</p>
 
 #### *3. Add new section here*
 
