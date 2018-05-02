@@ -273,7 +273,7 @@ $ git init
 Initialized empty Git repository in C:/Users/hisahoo.ISC/Desktop/Datascience/Weekly-DS-meeting/myProject/.git/
 /myProject (master)
 ```
-Since no git repository exist, we need to initialize it with `git init`
+Since no git repository exist, we need to initialize it with `git init`. Once you type this a hidden folder `.git` appears in the repository. Type `ls -a` to view this.
 
 ```
 $ git status
@@ -405,7 +405,11 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 The remote origin repo is not empty. There is an `README.md` exists. First `git pull` this.
+`-u` option is helpful for tracking the connection between local and remote branch.
+You have to do this once for the first push, it will set up association between your branch and the remote branch.
+Then you check with `git branch -a` and you can just do `git push`. <br>
 
+`git push -u origin master` means push the changes from the master branch to the remote origin.
 ```
 $ git pull
 warning: no common commits
