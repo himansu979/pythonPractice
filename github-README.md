@@ -497,7 +497,39 @@ $ git push -u origin master
 Everything up-to-date
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
+### 3. Creating a new empty local git repository on command line
 
+```
+$ cd test-may02
+$ git init
+Initialized empty Git repository in C:/Users/test-may02/.git/
+will change to (master)
+```
 
+```
+$ git status
+On branch master
 
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+```
+$ git pull https://github.com/himansu979/pythonPractice.git
+remote: Counting objects: 88, done.
+remote: Compressing objects: 100% (70/70), done.
+remote: Total 88 (delta 31), reused 33 (delta 7), pack-reused 0
+Unpacking objects: 100% (88/88), done.
+From https://github.com/himansu979/pythonPractice
+ * branch            HEAD       -> FETCH_HEAD
+```
+If you will do again `git pull`, it will show already up to date.
+
+```
+$ git pull https://github.com/himansu979/pythonPractice.git
+From https://github.com/himansu979/pythonPractice
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+```
 
