@@ -34,7 +34,7 @@ origin  https://github.com/himansu979/pythonPractice.git (push)
 ```
 
 ### 2. git commands for pushing local repository to github
-Following commands are very useful. `git status`, `git add`, `git commit`, `git log`, `git pull`, `git push`.
+Following commands are very useful. `git status`, `git clone`, `git add`, `git commit`, `git log`, `git pull`, `git push`.
 
 ```
 $ git pull https://github.com/himansu979/pythonPractice.git
@@ -532,4 +532,78 @@ From https://github.com/himansu979/pythonPractice
  * branch            HEAD       -> FETCH_HEAD
 Already up to date.
 ```
+
+```
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+you don't see the message here `Your branch is up to date with 'origin/master'.`, because there is no remote orgin is setup yet.
+
+```
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+```
+
+```
+$ git remote -v
+$ git remote add origin https://github.com/himansu979/pythonPractice.git
+$ git remote -v
+origin  https://github.com/himansu979/pythonPractice.git (fetch)
+origin  https://github.com/himansu979/pythonPractice.git (push)
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+Check that it still doesn't appear the link to upstream branch in git status
+
+```
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+```
+
+```
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+```
+
+Just mark the output difference between these two commands.
+```
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+$ git push
+Everything up-to-date
+```
+
+```
+$ git branch -a
+* master
+  remotes/origin/master
+```
+see now remote/origin/master shows up in git branch -a
+
+
+
+
+
+
+
+
 
