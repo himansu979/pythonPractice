@@ -264,5 +264,240 @@ To https://github.com/himansu979/pythonPractice.git
    8f763fc..3aba7e8  master -> master
 ```
 
+### 3. Creating a new local git repository on command line
+
+```
+$ mkdir myProject
+$ cd myProject
+$ git init
+Initialized empty Git repository in C:/Users/hisahoo.ISC/Desktop/Datascience/Weekly-DS-meeting/myProject/.git/
+/myProject (master)
+```
+Since no git repository exist, we need to initialize it with `git init`
+
+```
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+create a new file test1.txt
+```
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+`$ git remote -v` outputs nothing. There is no remote origin setup for this.
+
+```
+$ git log -1
+fatal: your current branch 'master' does not have any commits yet
+```
+
+```
+$ git add test1.txt
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   test1.txt
+```
+
+```
+$ git commit -m "added test1.txt"
+[master (root-commit) f62a3b0] added test1.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test1.txt
+```
+
+```
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+Modify test1.txt and add new test2.txt
+
+```
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+`git add .` adds all files for commit.
+
+```
+$ git add .
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   test1.txt
+        new file:   test2.txt
+```
+
+```
+$ git commit -m "added test2.txt"
+[master 050e39e] added test2.txt
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 test2.txt
+```
+
+```
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+since there is no remote origin for this repo, you have to setup one.
+```
+$ git remote -v
+$ git remote add origin https://github.com/himansu979/pythonPractice.git
+$ git remote -v
+origin  https://github.com/himansu979/pythonPractice.git (fetch)
+origin  https://github.com/himansu979/pythonPractice.git (push)
+```
+
+```
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+```
+`git push` is giving error, because there is no upsream branch for this
+
+```
+$ git push -u origin master
+To https://github.com/himansu979/pythonPractice.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/himansu979/pythonPractice.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+The remote origin repo is not empty. There is an `README.md` exists. First `git pull` this.
+
+```
+$ git pull
+warning: no common commits
+remote: Counting objects: 76, done.
+remote: Compressing objects: 100% (63/63), done.
+remote: Total 76 (delta 28), reused 24 (delta 6), pack-reused 0
+Unpacking objects: 100% (76/76), done.
+From https://github.com/himansu979/pythonPractice
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+```
+
+```
+$ git pull https://github.com/himansu979/pythonPractice.git
+From https://github.com/himansu979/pythonPractice
+ * branch            HEAD       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+```
+
+Since it is first pull request, giving error
+
+```
+$ git pull https://github.com/himansu979/pythonPractice.git --allow-unrelated-histories
+From https://github.com/himansu979/pythonPractice
+ * branch            HEAD       -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ Auto.csv                | 393 +++++++++++++++++++++
+ README.md               |  39 ++
+ github-README.md        | 268 ++++++++++++++
+ images/scatter-plot.png | Bin 0 -> 97228 bytes
+ lab-one.ipynb           | 918 ++++++++++++++++++++++++++++++++++++++++++++++++
+ test.txt                |   2 +
+ 6 files changed, 1620 insertions(+)
+ create mode 100644 Auto.csv
+ create mode 100644 README.md
+ create mode 100644 github-README.md
+ create mode 100644 images/scatter-plot.png
+ create mode 100644 lab-one.ipynb
+ create mode 100644 test.txt
+```
+
+```
+$ git push -u origin master
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 804 bytes | 804.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/himansu979/pythonPractice.git
+   ed96d5b..65222e6  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+```
+
+```
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+```
+```
+$ git pull
+Already up to date.
+```
+
+```
+$ git push
+Everything up-to-date
+```
+
+```
+$ git pull https://github.com/himansu979/pythonPractice.git
+From https://github.com/himansu979/pythonPractice
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+```
+
+```
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+```
+
+
 
 
