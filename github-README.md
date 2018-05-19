@@ -266,6 +266,13 @@ To https://github.com/himansu979/pythonPractice.git
    8f763fc..3aba7e8  master -> master
 ```
 
+if you will do `git pull` now
+```
+$ git pull
+Already up to date.
+```
+
+
 ### 3. Creating a new local git repository on command line
 
 ```
