@@ -28,6 +28,8 @@ $ git log -10 --oneline
 ```
 Check the remote repositories
 ```
+$ git remote
+origin
 $ git remote -v
 origin  https://github.com/himansu979/pythonPractice.git (fetch)
 origin  https://github.com/himansu979/pythonPractice.git (push)
