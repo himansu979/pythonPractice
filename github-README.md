@@ -57,7 +57,7 @@ Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
 ```
-After a new file **test.txt** is created in the same directory, **git** recognized it as untracked file.
+Now create a new file or move a new file to this directory. After a new file **test.txt** is created in the same directory, **git** recognized it as untracked file.
 
 ```
 $ git status
