@@ -57,7 +57,7 @@ Your branch is up to date with 'origin/master'.
 
 nothing to commit, working tree clean
 ```
-After a new file **test.txt** is created in the same directory, **git** recognized it as untracked file.
+Now create a new file or move a new file to this directory. After a new file **test.txt** is created in the same directory, **git** recognized it as untracked file.
 
 ```
 $ git status
@@ -283,6 +283,11 @@ Initialized empty Git repository in C:/Users/hisahoo.ISC/Desktop/Datascience/Wee
 /myProject (master)
 ```
 Since no git repository exist, we need to initialize it with `git init`. Once you type this a hidden folder `.git` appears in the repository. Type `ls -a` to view this.
+If you will remove this `rm -rf .git/`, you will see **master** is removed from the end. this is no more a git repository.
+```
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+```
 
 ```
 $ git status
