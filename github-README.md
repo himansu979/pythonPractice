@@ -16,6 +16,9 @@ After you ``cd`` into the directory, you will notice **(master)** is added at th
 master shows that you are currently in master branch.
 #### check global variables
 ```
+$ where git
+C:\Program Files\Git\mingw64\bin\git.exe
+$ git config --list
 $ git config --global user.name user_name
 $ git config --global user.email user_email
 $ git config --global core.editor
@@ -122,11 +125,11 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 Enter a message for the ``git pull``. 
 <pre>
 Some `vi` editor commands: 
-`x` to delete 
-`u` to undo last change 
 `i` to enter command mode 
 `Esc` exit command mode
 `:x` to save and exit.
+`x` to delete 
+`u` to undo last change 
 </pre>
 ```
 Merge https://github.com/himansu979/pythonPractice
@@ -452,6 +455,10 @@ fatal: refusing to merge unrelated histories
 ```
 
 Since it is first pull request, giving error
+```
+you can also use this command
+git pull origin master --allow-unrelated-histories
+```
 
 ```
 $ git pull https://github.com/himansu979/pythonPractice.git --allow-unrelated-histories
