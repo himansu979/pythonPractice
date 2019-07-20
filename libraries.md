@@ -5,7 +5,8 @@ opencv
 requests
 BeautifulSoup,Scrapy
 PyAutoGUI
-Pygame
+Pygame 
+
 selenium
 ```
 Selenium is used to automate web browser interaction from Python. Selenium provides support for many popular web browsers like 
